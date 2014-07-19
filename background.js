@@ -35,17 +35,12 @@ function setTab(tabId) {
   filter.tabId = tabId;
 
   // Add CORS headers to responses so we can talk git cross-domain.
-  // webRequest.onHeadersReceived.removeListener()
   webRequest.onHeadersReceived.addListener(onHeadersReceived, filter, ["blocking", "responseHeaders"]);
   // // Change the agent to make bitbucket happy
   // webRequest.onBeforeSendHeaders.addListener(onBeforeSendHeaders, filter, ["blocking", "requestHeaders"]);
 }
 
 function onHeadersReceived(details) {
-  var headers = details.requestHeaders;
-  for (var i = 0; i < headers.length; i++) {
-
-  }
   return {
     responseHeaders: details.responseHeaders.concat(extraHeaders)
   };
