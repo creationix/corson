@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "CORS ON",
+  "description": "Enable CORS so JS-Git can clone from a webpage.",
+  "version": "1.0",
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "*://*/"
+  ],
+  "browser_action": {
+    "default_title": "CORS ON"
+  }
+}
