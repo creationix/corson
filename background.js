@@ -42,7 +42,6 @@ function setTab(tabId) {
 }
 
 function onHeadersReceived(details) {
-  console.log("onHeadersReceived");
   var headers = details.requestHeaders;
   for (var i = 0; i < headers.length; i++) {
 
